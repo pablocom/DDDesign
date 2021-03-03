@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Messages", "Sales.Messages\Sales.Messages.csproj", "{34AEBD6D-1B4E-468A-B056-654722B7C592}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDesign.Web", "DDDesign.Web\DDDesign.Web.csproj", "{6BEFAC52-E653-40C6-BBCF-E583F47DC191}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{34AEBD6D-1B4E-468A-B056-654722B7C592}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34AEBD6D-1B4E-468A-B056-654722B7C592}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34AEBD6D-1B4E-468A-B056-654722B7C592}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BEFAC52-E653-40C6-BBCF-E583F47DC191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BEFAC52-E653-40C6-BBCF-E583F47DC191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BEFAC52-E653-40C6-BBCF-E583F47DC191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BEFAC52-E653-40C6-BBCF-E583F47DC191}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

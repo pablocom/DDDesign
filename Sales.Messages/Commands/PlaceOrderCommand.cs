@@ -1,8 +1,9 @@
 ﻿using System;
+using NServiceBus;
 
 namespace Sales.Messages.Commands
 {
-    public class PlaceOrderCommand
+    public class PlaceOrderCommand : ICommand
     {
         public string UserId { get; set; }
         public string[] ProductIds { get; set; }
