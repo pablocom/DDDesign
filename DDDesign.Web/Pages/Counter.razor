@@ -19,7 +19,7 @@
 
     private async Task SendMessage()
     {
-        await this.MessageBus.Send(new PlaceOrderCommand());
+        await this.MessageBus.Send(new PlaceOrderCommand()).ConfigureAwait(false);
     }
 
 }
