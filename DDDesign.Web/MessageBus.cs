@@ -11,6 +11,7 @@ namespace DDDesign.Web
         {
             var endpointConfiguration = new EndpointConfiguration("ClientUI");
             endpointConfiguration.UseTransport<LearningTransport>();
+            endpointConfiguration.SendOnly();
 
             endpointInstance = Endpoint.Start(endpointConfiguration)
                 .ConfigureAwait(false).GetAwaiter().GetResult();    
