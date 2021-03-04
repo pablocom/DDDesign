@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using NServiceBus;
+using Sales.Messages.Commands;
 
 namespace DDDesign.Web
 {
@@ -10,11 +11,16 @@ namespace DDDesign.Web
         public MessageBus()
         {
             var endpointConfiguration = new EndpointConfiguration("ClientUI");
-            endpointConfiguration.UseTransport<LearningTransport>();
+            var transport = endpointConfiguration.UseTransport<LearningTransport>();
+            var routing = transport.Routing();
+            routing.RouteToEndpoint(typeof(PlaceOrderCommand), "Sales");
+            
             endpointConfiguration.SendOnly();
 
             endpointInstance = Endpoint.Start(endpointConfiguration)
                 .ConfigureAwait(false).GetAwaiter().GetResult();    
+            
+            
         }
 
         public Task Send(IMessage message)

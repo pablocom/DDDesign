@@ -1,0 +1,25 @@
+﻿@page "/order"
+@using Sales.Messages.Commands
+@inject IMessageBus MessageBus
+
+<h1>Order</h1>
+
+<button class="btn btn-primary" @onclick="SendMessage">Send message</button>
+<p>@message</p>
+
+@code {
+
+    private string message = string.Empty;
+
+    private async Task SendMessage()
+    {
+        var placeOrderCommand = new PlaceOrderCommand()
+        {
+            UserId = Guid.NewGuid().ToString()
+        };
+        
+        await MessageBus.Send(placeOrderCommand).ConfigureAwait(false);
+        message = $"Your command has been placed!";
+    }
+
+}
