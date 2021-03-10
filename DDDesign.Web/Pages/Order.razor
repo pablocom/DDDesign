@@ -15,7 +15,8 @@
     {
         var placeOrderCommand = new PlaceOrderCommand()
         {
-            UserId = Guid.NewGuid().ToString()
+            UserId = Guid.NewGuid().ToString(),
+            ProductIds = Enumerable.Range(0, 10).Select(x => x.ToString()).ToArray()
         };
         
         await MessageBus.Send(placeOrderCommand).ConfigureAwait(false);

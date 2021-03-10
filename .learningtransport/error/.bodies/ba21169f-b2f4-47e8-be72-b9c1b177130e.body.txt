@@ -1,0 +1,1 @@
+<?xml version="1.0"?><PlaceOrderCommand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.net/Sales.Messages.Commands"><UserId>cbb412ce-278c-4051-b6fb-d27a9326bb70</UserId><TimeStamp>0001-01-01T00:00:00</TimeStamp></PlaceOrderCommand>
