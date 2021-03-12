@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDDesign.Web", "DDDesign.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sales.Server", "Sales.Server\Sales.Server.csproj", "{02089922-768E-41E1-AA7A-E7125C97E7C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billing.Messages", "Billing.Messages\Billing.Messages.csproj", "{A31437ED-3284-43A8-B4F4-3D6F3DA96886}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billing.Server", "Billing.Server\Billing.Server.csproj", "{F78DF2D5-F025-4B28-B972-7DD4D0FA5F31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{02089922-768E-41E1-AA7A-E7125C97E7C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02089922-768E-41E1-AA7A-E7125C97E7C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02089922-768E-41E1-AA7A-E7125C97E7C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A31437ED-3284-43A8-B4F4-3D6F3DA96886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A31437ED-3284-43A8-B4F4-3D6F3DA96886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A31437ED-3284-43A8-B4F4-3D6F3DA96886}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A31437ED-3284-43A8-B4F4-3D6F3DA96886}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F78DF2D5-F025-4B28-B972-7DD4D0FA5F31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F78DF2D5-F025-4B28-B972-7DD4D0FA5F31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F78DF2D5-F025-4B28-B972-7DD4D0FA5F31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F78DF2D5-F025-4B28-B972-7DD4D0FA5F31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
