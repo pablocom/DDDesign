@@ -20,7 +20,7 @@ namespace Sales.Server
                 
             LogOrderCreatedInformation(message, orderId);
             
-            var orderCreatedEvent = new OrderCreatedEvent
+            var orderCreatedEvent = new OrderCreated
             {
                 OrderId = orderId,
                 UserId = message.UserId,

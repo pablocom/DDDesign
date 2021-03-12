@@ -11,9 +11,6 @@ namespace Billing.Server
             Console.Title = "Billing";
 
             var endpointConfiguration = new EndpointConfiguration("Billing");
-            endpointConfiguration.Recoverability()
-                .Immediate(
-                    immediate => { immediate.NumberOfRetries(5); });
 
             var transport = endpointConfiguration.UseTransport<LearningTransport>();
 

@@ -4,7 +4,7 @@ using NServiceBus;
 
 namespace Sales.Messages.Events
 {
-    public class OrderCreatedEvent : IEvent
+    public class OrderCreated : IEvent
     {
         public string OrderId { get; set; }
         public string UserId { get; set; }
