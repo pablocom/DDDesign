@@ -14,10 +14,7 @@ namespace Sales.Server
         
         public Task Handle(PlaceOrderCommand message, IMessageHandlerContext context)
         {
-            log.Info($"Received PlaceOrder, OrderId = {message.UserId}");
-
             var orderId = Database.SaveOrder(message.ProductIds, message.UserId, message.ShippingTypeId);
-                
             LogOrderCreatedInformation(message, orderId);
             
             var orderCreatedEvent = new OrderCreated
@@ -26,7 +23,7 @@ namespace Sales.Server
                 UserId = message.UserId,
                 ProductsIds = message.ProductIds,
                 ShippingTypeId = message.ShippingTypeId,
-                TimeStamp = DateTime.Now, // TODO: to make it testable do it through a IDateTimeProvider injecting dependency
+                TimeStamp = DateTime.Now,
                 Amount = CalculateCostOf(message.ProductIds)
             };
             return context.Publish(orderCreatedEvent);
@@ -47,15 +44,5 @@ namespace Sales.Server
         }
     }
     
-    // this can be any database technology, it can differ between business components
-    public static class Database
-    {
-        private static int _id = 0;
-
-        public static string SaveOrder(IEnumerable<string> productIds, string userId, string shippingTypeId)
-        {
-            var nextOrderId = _id++;
-            return nextOrderId.ToString();
-        }
-    }
+   
 }

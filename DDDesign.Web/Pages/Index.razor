@@ -1,7 +1,31 @@
 ﻿@page "/"
+@using Sales.Messages.Commands
+@inject IMessageBus MessageBus
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
+<button class="btn btn-primary" @onclick="SendMessage">Create order</button>
+<p>@message</p>
+
 <SurveyPrompt Title="How is Blazor working for you?"/>
+
+@code {
+
+    private string message = string.Empty;
+
+    private async Task SendMessage()
+    {
+        var placeOrderCommand = new PlaceOrderCommand()
+        {
+            UserId = Guid.NewGuid().ToString(),
+            ShippingTypeId = "Premium",
+            ProductIds = Enumerable.Range(0, 10).Select(x => x.ToString()).ToArray()
+        };
+        
+        await MessageBus.Send(placeOrderCommand).ConfigureAwait(false);
+        message = $"Your command has been placed!";
+    }
+
+}
