@@ -9,7 +9,7 @@ namespace Billing.Server
 {
     public class RecordPaymentAttemptHandler : IHandleMessages<RecordPaymentAttempt>
     {
-        private static readonly ILog Log = LogManager.GetLogger<OrderCreatedHandler>();
+        private static readonly ILog Log = LogManager.GetLogger<RecordPaymentAttemptHandler>();
 
         public async Task Handle(RecordPaymentAttempt message, IMessageHandlerContext context)
         {
@@ -23,8 +23,7 @@ namespace Billing.Server
 
         private static class Database
         {
-            public static void SavePaymentAttempt(string orderId,
-                PaymentStatus status)
+            public static void SavePaymentAttempt(string orderId, PaymentStatus status)
             {
                 // .. save it to your favorite database
                 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Billing.Messages.Commands;
+using Billing.Messages.Events;
 using NServiceBus;
 using NServiceBus.Logging;
 using Sales.Messages.Events;
@@ -17,7 +18,13 @@ namespace Billing.Server
             
             var cardDetails = Database.GetCardDetailsFor(message.UserId);
             var paymentConfirmation = PaymentProvider.ChargeCreditCard(cardDetails, message.Amount);
-            
+
+            if (paymentConfirmation.Status == PaymentStatus.Rejected)
+            {   
+                await context.Publish(new PaymentRejected(message.OrderId));
+                return;
+            }
+
             await context.SendLocal(new RecordPaymentAttempt
             {
                 OrderId = message.OrderId,
@@ -33,8 +40,12 @@ namespace Billing.Server
             var paymentProviderIsUnavailable = new Random().Next(1, 5) == 1;
             if (paymentProviderIsUnavailable) 
                 throw new Exception($"{nameof(PaymentProvider)} is unavailable");
-            
-            return new PaymentConfirmation { Status = PaymentStatus.Accepted };
+
+
+            var paymentIsRejected = new Random().Next(1, 5) == 1;
+            return paymentIsRejected
+                ? new PaymentConfirmation {Status = PaymentStatus.Rejected}
+                : new PaymentConfirmation {Status = PaymentStatus.Accepted};
         }
     }
     public class PaymentConfirmation
