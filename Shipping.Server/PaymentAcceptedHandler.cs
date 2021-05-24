@@ -7,7 +7,7 @@ namespace Shipping.Server
 {
     public class PaymentAcceptedHandler : IHandleMessages<PaymentAccepted>
     {
-        private static readonly ILog Logger = LogManager.GetLogger<OrderCreatedHandler>();
+        private static readonly ILog Logger = LogManager.GetLogger<PaymentAcceptedHandler>();
 
         public Task Handle(PaymentAccepted message, IMessageHandlerContext context)
         {

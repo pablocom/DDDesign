@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shipping.Messages", "Shippi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shipping.Server", "Shipping.Server\Shipping.Server.csproj", "{4098CB0B-0347-4097-A580-380EB028A4E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promotions.LuckyWinner", "Promotions.LuckyWinner\Promotions.LuckyWinner.csproj", "{DFA87ADC-C691-47EB-8010-1AFBDAC1A036}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{4098CB0B-0347-4097-A580-380EB028A4E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4098CB0B-0347-4097-A580-380EB028A4E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4098CB0B-0347-4097-A580-380EB028A4E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFA87ADC-C691-47EB-8010-1AFBDAC1A036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFA87ADC-C691-47EB-8010-1AFBDAC1A036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFA87ADC-C691-47EB-8010-1AFBDAC1A036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFA87ADC-C691-47EB-8010-1AFBDAC1A036}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
