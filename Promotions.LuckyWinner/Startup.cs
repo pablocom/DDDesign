@@ -22,7 +22,7 @@ namespace Promotions.LuckyWinner
             services.AddHealthEndpoints();
             services.AddMassTransit(x =>
             {
-                x.AddConsumer<OrderCreatedConsumer>();
+                x.AddConsumers(typeof(OrderCreatedConsumer).Assembly);
 
                 x.UsingInMemory((context,cfg) =>
                 {
