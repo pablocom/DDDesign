@@ -22,7 +22,7 @@ namespace Promotions.LuckyWinner
             services.AddHealthEndpoints();
             services.AddMassTransit(x =>
             {
-                x.AddConsumers(typeof(OrderCreatedConsumer).Assembly);
+                x.AddConsumers(typeof(OrderCreatedToNServiceBusBridge).Assembly);
 
                 x.UsingInMemory((context,cfg) =>
                 {
@@ -30,7 +30,9 @@ namespace Promotions.LuckyWinner
                 });
             });
             services.AddMassTransitHostedService(true);
-            services.AddHostedService<ServiceBusConsumerWorker>();
+            services.AddHostedService<MassTransitConsumerWorker>();
+            services.AddHostedService<NServiceBusHandlerWorker>();
+            services.AddSingleton<IMessageBus, MessageBus>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

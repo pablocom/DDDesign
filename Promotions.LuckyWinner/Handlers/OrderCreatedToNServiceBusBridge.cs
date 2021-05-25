@@ -4,26 +4,29 @@ using System.Threading.Tasks;
 
 using MassTransit;
 using Microsoft.Extensions.Logging;
+using NServiceBus;
 
 namespace Promotions.LuckyWinner.Handlers
 {
-    public class OrderCreatedConsumer : IConsumer<OrderCreated>
+    public class OrderCreatedToNServiceBusBridge : IConsumer<OrderCreated>
     {
-        private readonly ILogger<OrderCreatedConsumer> logger;
+        private readonly ILogger<OrderCreatedToNServiceBusBridge> logger;
+        private readonly IMessageBus messageBus;
 
-        public OrderCreatedConsumer(ILogger<OrderCreatedConsumer> logger)
+        public OrderCreatedToNServiceBusBridge(ILogger<OrderCreatedToNServiceBusBridge> logger, IMessageBus messageBus)
         {
             this.logger = logger;
+            this.messageBus = messageBus;
         }
 
-        public Task Consume(ConsumeContext<OrderCreated> context)
+        public async Task Consume(ConsumeContext<OrderCreated> context)
         {
             logger.LogInformation($"Handling OrderCreated from Mass Transit");
-            return Task.CompletedTask;
+            await messageBus.Publish(context.Message);
         }
     }
     
-    public class OrderCreated
+    public class OrderCreated : IMessage
     {
         public string OrderId { get; set; }
         public string UserId { get; set; }

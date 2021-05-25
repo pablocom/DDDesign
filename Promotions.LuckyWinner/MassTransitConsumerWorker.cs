@@ -6,11 +6,11 @@ using Promotions.LuckyWinner.Handlers;
 
 namespace Promotions.LuckyWinner
 {
-    public class ServiceBusConsumerWorker : BackgroundService
+    public class MassTransitConsumerWorker : BackgroundService
     {
         private readonly IBus _bus;
 
-        public ServiceBusConsumerWorker(IBus bus)
+        public MassTransitConsumerWorker(IBus bus)
         {
             _bus = bus;
         }
