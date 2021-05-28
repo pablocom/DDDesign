@@ -5,7 +5,7 @@ using Billing.Messages.Events;
 using NServiceBus;
 using NServiceBus.Logging;
 
-namespace Billing.Server
+namespace Billing.Server.Handlers
 {
     public class RecordPaymentAttemptHandler : IHandleMessages<RecordPaymentAttempt>
     {

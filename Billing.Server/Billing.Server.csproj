@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -6,11 +6,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="NServiceBus" Version="7.4.4" />
+      <PackageReference Include="NLog" Version="4.7.10" />
+      <PackageReference Include="NServiceBus" Version="7.4.6" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Billing.Messages\Billing.Messages.csproj" />
+      <ProjectReference Include="..\DDDesign.Core.NServiceBus\DDDesign.Core.NServiceBus.csproj" />
       <ProjectReference Include="..\Sales.Messages\Sales.Messages.csproj" />
     </ItemGroup>
 

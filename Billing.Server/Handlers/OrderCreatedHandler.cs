@@ -6,7 +6,7 @@ using NServiceBus;
 using NServiceBus.Logging;
 using Sales.Messages.Events;
 
-namespace Billing.Server
+namespace Billing.Server.Handlers
 {
     public class OrderCreatedHandler : IHandleMessages<OrderCreated>
     {
